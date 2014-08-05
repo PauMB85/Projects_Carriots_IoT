@@ -8,8 +8,8 @@
 //libreries
 #include <Process.h>
 
-#define APIKEY        "f15bdf60554cd157a21f04720d851e009765e8efb0ea7f3989270ad10d4761fa" 	// TO BE REPLACED with your Carriots APIKEY
-#define DEVICE        "defaultDevice@PauMB85.PauMB85" 
+#define APIKEY        "You apikey" 	// TO BE REPLACED with your Carriots APIKEY
+#define DEVICE        "Your device" 
 
 String dataString = "";  //Constant to store the payload that will be sent
 
