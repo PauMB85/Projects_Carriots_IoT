@@ -1,4 +1,4 @@
-ArduinoCarriots
+Projects Carriots IoT
 ===============
 
-Projects with arduino and Carriots IoT
+Projects whit the Carriots plataform, IoT
