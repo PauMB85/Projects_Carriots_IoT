@@ -83,25 +83,30 @@ def envioMail(hora,minuto):
     
 def main():
     '''Programa principal'''
-    #incializamos                                                                                  
+    #incializamos                                                                       \
+                                                                                         
     setup()
 
     global n_Moves, lastStatus
     while True:
-        #Comprobamos si se detecta movimiento                                                      
+        #Comprobamos si se detecta movimiento                                           \
+                                                                                         
         if GPIO.input(motion) == GPIO.HIGH and lastStatus == 0:
             print "Se detecta movimeinto"
             lastStatus = 1
             n_Moves += 1
             GPIO.output(ledRed,True)
             GPIO.output(ledGreen,False)
-            if n_Moves%20 == 0 :
+            if n_Moves%5 == 0 :
                 t_CapturaSeg = time.time()
                 t_Captura = time.localtime(t_CapturaSeg)
                 hour, minute = tiempo(t_Captura)
-                envioMail(hour,minute)
+		envioMail(hour,minute)
                 print "Send Mail"
+            elif n_Moves%17 == 0 :
+                #PREPARAR PARA ENVIAR UN SMS CON CARRIOTS                                
                 n_Moves = 0
+                print "Send a SMS"
       elif GPIO.input(motion) == GPIO.LOW and lastStatus == 1:
             print "No se detecta movimiento"
             lastStatus = 0
